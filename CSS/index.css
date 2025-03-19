@@ -63,4 +63,44 @@
 .book-Container
 {
     background-color: #444;
+    min-height: 400px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: row;
+}
+
+.book-Container div {
+    width: 50%;
+    margin: 5px;
+    padding: 5px;
+}
+
+.book-image {
+    background-color: aliceblue;
+    align-items: center;
+}
+
+.book-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 50%;
+    max-width: 100%;
+}
+
+.book-info {
+    background-color: bisque;
+}
+
+@media screen and (max-width: 769px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .column {
+        width: 100%;
+    }
+    
 }
