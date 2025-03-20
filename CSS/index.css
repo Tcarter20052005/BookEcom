@@ -63,36 +63,47 @@
 .book-Container
 {
     background-color: #444;
-    min-height: 400px;
+    min-height: 300px;
     max-height: 600px;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
 }
 
 .book-Container div {
     width: 50%;
+    height: 100%;
     margin: 5px;
     padding: 5px;
 }
 
 .book-image {
     background-color: aliceblue;
+    flex: 1;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .book-image img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 50%;
-    max-width: 100%;
+    width: 60%;
+    height: auto;
+    max-height: 70%;
+    object-fit: contain;
 }
 
 .book-info {
     background-color: bisque;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1090px) {
     .content {
         flex-direction: column;
         align-items: center;
