@@ -63,8 +63,7 @@
 .book-Container
 {
     background-color: #444;
-    min-height: 300px;
-    max-height: 600px;
+    height: 420px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -85,6 +84,10 @@
     min-height: 300px;
 }
 
+.book-title {
+    height: 70px;
+}
+
 .book-image {
     background-color: aliceblue;
     flex: 1;
@@ -92,12 +95,12 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 5px;
 }
 
 .book-image img {
-    width: 60%;
     height: auto;
-    max-height: 62%;
+    max-height: 76%;
     object-fit: contain;
 }
 
