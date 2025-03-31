@@ -63,22 +63,21 @@
 .book-Container
 {
     background-color: #444;
-    min-height: 300px;
-    max-height: 600px;
+    max-width: 600px; 
+    aspect-ratio: 3 / 2;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
     padding: 10px;
     gap: 10px;
-    width: 100%;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
+    height: 350px;
 }
 
 .book-Container div {
     width: 50%;
-    height: 100%;
+    height: auto;
     margin: 5px;
     padding: 5px;
 }
@@ -93,9 +92,8 @@
 }
 
 .book-image img {
-    width: 60%;
-    height: auto;
-    max-height: 70%;
+    max-width: 95%;
+    padding: 10%;
     object-fit: contain;
 }
 
@@ -105,10 +103,14 @@
 
 @media screen and (max-width: 1090px) {
     .content {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
     }
+    
 
     .column {
         width: 100%;
