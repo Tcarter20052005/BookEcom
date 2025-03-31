@@ -1,3 +1,16 @@
+h {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 5vw;
+
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 4vw;
+    font-weight: normal;
+}
+
 .nav-container
 {
     display: flex;
@@ -41,7 +54,7 @@
 .nav-container li a:hover
 {
     background-color: #ddd;
-  color: black;
+    color: black;
 }
 
 .content
@@ -63,23 +76,28 @@
 .book-Container
 {
     background-color: #444;
-    max-width: 600px; 
-    aspect-ratio: 3 / 2;
+    height: 420px;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
     padding: 10px;
     gap: 10px;
+    width: 100%;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
-    height: 350px;
+
 }
 
 .book-Container div {
     width: 50%;
-    height: auto;
+    height: 100%;
     margin: 5px;
     padding: 5px;
+    min-height: 300px;
+}
+
+.book-title {
 }
 
 .book-image {
@@ -89,11 +107,12 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 5px;
 }
 
 .book-image img {
-    max-width: 95%;
-    padding: 10%;
+    height: auto;
+    max-height: 76%;
     object-fit: contain;
 }
 
@@ -105,14 +124,15 @@
     .content {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
         gap: 20px;
         padding: 20px;
     }
-    
 
     .column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         width: 100%;
     }
     
