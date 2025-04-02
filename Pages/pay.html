@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TC Payment</title>
         <link rel="stylesheet" href="../CSS/index.css">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="../CSS/pay.css">
+        <script src="../Javascript/index.js" defer></script>
     </head>
     <body>
         <div class="nav-container">
@@ -17,40 +18,34 @@
         <form id="pay-form" action="">
 
             <div class="group">
-                <input id="cname" name="cname" type="text" placeholder="Card Number" required>
+                <label for="cardNum">Card Number: </label>
+                <input id="cardNum" name="cardNum" type="text" placeholder="Card Number" required>
             </div>
             
             <div class="group">
-                <input type="number" name="expmon" id="expmon" min="1" max="12" required>
-                <input type="number" name="expyear" id="expyear" required>
+                <div class="group-1">
+                    <label for="expmon">Expiry Month:</label>
+                    <select name="expmon" id="expmon" required></select>
+                </div>
+                
+
+                <div class="group-2">
+                    <label for="expyear">Expiry Year:</label>
+                    <select name="expyear" id="expyear" required></select>
+                </div>
+                
+            </div>
+
+            <div class="group">
+                <label for="seCode">CCV: </label>
+                <input id="seCode" name="seCode" placeholder="CCV">
             </div>
 
             <div class="group">
                 
             </div>
 
-            <div class="group">
-                
-            </div>
             
-
-            <select id="expyear" name="expyear" placeholder="YY">
-                <option name="" value="" style="display:none;">YYYY</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
-                <option value="2028">2028</option>
-                <option value="2029">2029</option>
-                <option value="2030">2030</option>
-                <option value="2031">2031</option>
-            </select>
-
-            <input id="seCode" name="seCode" placeholder="CCV">
 
         </form>
         </div>
