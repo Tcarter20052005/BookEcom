@@ -3,9 +3,57 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TC Purchase</title>
+        <title>TC Payment</title>
+        <link rel="stylesheet" href="../CSS/index.css">
+        <link rel="stylesheet" href="">
     </head>
     <body>
+        <div class="nav-container">
+            <div id="logo"></div>
+                <div id="title"><h1>TC Book Store Payment</h1></div>
+        </div>
+        
+        <div class="form_container">
+        <form id="pay-form" action="">
+
+            <div class="group">
+                <input id="cname" name="cname" type="text" placeholder="Card Number" required>
+            </div>
+            
+            <div class="group">
+                <input type="number" name="expmon" id="expmon" min="1" max="12" required>
+                <input type="number" name="expyear" id="expyear" required>
+            </div>
+
+            <div class="group">
+                
+            </div>
+
+            <div class="group">
+                
+            </div>
+            
+
+            <select id="expyear" name="expyear" placeholder="YY">
+                <option name="" value="" style="display:none;">YYYY</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+                <option value="2031">2031</option>
+            </select>
+
+            <input id="seCode" name="seCode" placeholder="CCV">
+
+        </form>
+        </div>
         
     </body>
 </html>
