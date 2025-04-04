@@ -10,7 +10,7 @@ for (let i = 1; i <=12; i++) {
 
 // Populate Expiry Year
 const yearSelect = document.getElementById("expyear");
-const currentYear = new Date().getFullYear()-2;
+const currentYear = new Date().getFullYear();
 for (let i = 0; i < 10; i++) {
     let option = document.createElement("option");
     option.value = currentYear + i;
@@ -18,17 +18,12 @@ for (let i = 0; i < 10; i++) {
     yearSelect.appendChild(option);
 }
 
-function HideErrorTXT() {
+// Toggle Error Text
+function ErrorTXT(show, message = "") {
     const errortxt = document.getElementById("error-text")
-    errortxt.parentNode.style.display = 'none';
+    errortxt.parentNode.style.display = show ? "block" : "none";
+    errortxt.textContent = message;
 }
-
-function ShowErrorTXT() {
-    const errortxt = document.getElementById("error-text")
-    errortxt.parentNode.style.display = '';
-}
-
-
 
 // Add a Form Submit Event Listener
 document.getElementById("pay-form"). addEventListener("submit", async function(event) {
@@ -36,48 +31,42 @@ document.getElementById("pay-form"). addEventListener("submit", async function(e
     const form = document.getElementById("pay-form");
     
     try {
+        ErrorTXT(false); // Ensure Error Text has been hiden again
+
         // Retrieve Form Values
-        HideErrorTXT();
-        
         const cardNum = document.getElementById("cardNum").value.trim();
         const expMon = document.getElementById("expmon").value;
         const expYear = document.getElementById("expyear").value;
         const CCV = document.getElementById("seCode").value.trim();
 
-        // Check if not a number
+        // Ensure Numeric Inputs
         if (isNaN(cardNum) || isNaN(expMon) || isNaN(expYear) || isNaN(CCV)) {
             throw new Error("Incorrect Data Type entered");
         }
 
-        // Form Validation - Step 1 -- Card Number Length Check
-        const cardNumLen = cardNum.toString().length;
-        if (cardNumLen != 16) {
-            throw new Error("Card Number is of Incorrect Size");
-        } 
-
-        // Form Validation - Step 2 -- Master Card Check
-        const allowed = [51, 52, 53, 54, 55]
-        if (!allowed.includes(Number(cardNum.toString().slice(0, 2)))) {
-            throw new Error("Invalid MasterCard number");
+        // Form Validation - Step 1 -- Master Card Number and Length Check
+        const MCregex = /^5[1-5]\d{14}$/;
+        if (!MCregex.test(cardNum)) {
+            throw new Error("Invalid Card Number");
         }
 
-        // Form Validation - Step 3 -- Card Expiry Check
+        // Form Validation - Step 2 -- Card Expiry Check
         const checkYear = new Date().getFullYear();
         const checkMonth = new Date().getMonth()+1;
 
         if (checkYear > expYear) {
             throw new Error("Card is Expired or Incorrect")
-        } else if (expYear === currentYear && checkMonth > expMon) {
+        } else if (expYear == currentYear && checkMonth > expMon) {
             throw new Error("Card is Expired or Incorrect")
         }
             
-        // Form Validation - Step 4 -- CCV Length Check
+        // Form Validation - Step 3 -- CCV Length Check
         const CCVlen = CCV.toString().length;
-        if (2 >= CCVlen || CCVlen >= 5) {
+        if (CCVlen < 3 || CCVlen > 4) {
             throw new Error("CCV Incorrect Length")
         }
 
-        // Compile to Send
+        // Build Data
         const sendData = {
             "master_card": cardNum,
             "exp_year": expYear,
@@ -85,8 +74,9 @@ document.getElementById("pay-form"). addEventListener("submit", async function(e
             "cvv_code": CCV
         }
 
-        // Post Data
-        const response = await fetch("https://mudfoot.doc.stu.mmu.ac.uk/node/api/creditcard", {
+
+        // Post Request Data
+        fetch("https://mudfoot.doc.stu.mmu.ac.uk/node/api/creditcard", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -94,15 +84,28 @@ document.getElementById("pay-form"). addEventListener("submit", async function(e
             body: JSON.stringify(sendData)
             
         })
-        // Await and store Response
-        const res = await response.json();
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Server Error: Incorrerct Data");
+            }
+            if (response.headers.get("Content-Type").includes("application/json")) {
+                return response.json()
+            } else {
+                return response.text()
+            }
+        })
+        .then (resp => {
+            if (typeof resp === "string") {
+                throw new Error(resp);
+            }
+            alert(resp.message);
+        })
 
-        alert(res.message);
+
+        alert("ok");
     }
     catch(error) {
-        const errortxt = document.getElementById("error-text")
-        ShowErrorTXT();
-        errortxt.innerHTML = error.message;
+        ErrorTXT(true, error.message);
         form.reset();
     }
 
