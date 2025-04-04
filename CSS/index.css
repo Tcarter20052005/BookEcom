@@ -7,7 +7,7 @@ h {
 
 p {
     font-family: 'Raleway', sans-serif;
-    font-size: 1vw;
+    font-size: 2vw;
     font-weight: normal;
 }
 
@@ -15,9 +15,11 @@ p {
 {
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
+    padding: 10px;
+    background-color: #19747E;
 }
 
 #navbar
@@ -30,9 +32,12 @@ p {
 
 .nav-container li
 {
-    display: inline;
+    display: inline-block;
+    background-color: #A9D6E5;
+    text-align: center;
     border: 2px solid black;
-    background-color: #333;
+    transition: 0.3s;
+    padding: 0px 10px 0px 10px;
 }
 
 li:not(:last-child) { 
@@ -40,13 +45,9 @@ li:not(:last-child) {
  }
 
 .nav-container li a 
-{
-    text-align: center;
-    padding: 14px 16px;
+{    
     text-decoration: none;
-    padding: 8px 15px;
-    transition: 0.3s;
-    color: white;
+    color: black;
 }
 
 .nav-container ul
@@ -54,23 +55,41 @@ li:not(:last-child) {
     list-style: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
     
 }
 
-.nav-container li a:hover
+.nav-container li:hover
 {
-    background-color: #ddd;
+    height: auto;
+    background-color: #D1E8E2;
     color: black;
+    transform: scale(1.2);
 }
 
 .content
 {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 40px;
     padding: 20px;
+    background-color: #E2E2E2;
 }
+
+.brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+}
+
+#logo img {
+    width: 30px;
+    height: 30px;
+}
+
 
 .column 
 {
@@ -97,7 +116,9 @@ li:not(:last-child) {
 }
 
 .book-title {
-    height: 30%;
+    display: flex;
+    justify-content: center;
+
 }
 
 .book-desc {
@@ -156,6 +177,10 @@ li:not(:last-child) {
         flex-direction: column;
         gap: 20px;
         width: 100%;
+    }
+
+    .nav-container {
+        flex-direction: row;
     }
     
 }

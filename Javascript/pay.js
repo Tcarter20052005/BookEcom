@@ -59,12 +59,6 @@ document.getElementById("pay-form"). addEventListener("submit", async function(e
         } else if (expYear == currentYear && checkMonth > expMon) {
             throw new Error("Card is Expired or Incorrect")
         }
-            
-        // Form Validation - Step 3 -- CCV Length Check
-        const CCVlen = CCV.toString().length;
-        if (CCVlen < 3 || CCVlen > 4) {
-            throw new Error("CCV Incorrect Length")
-        }
 
         // Build Data
         const sendData = {
@@ -100,6 +94,10 @@ document.getElementById("pay-form"). addEventListener("submit", async function(e
             }
             alert(resp.message);
         })
+        .then ((cardNum) => {
+            const last_4 = cardNum % 10000;
+            localStorage.setItem("lastFour", last_4);
+         })
 
 
         alert("ok");
