@@ -1,14 +1,19 @@
+html {
+    font-size: 16px; /* Base size for body text */
+  }
+
 h {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 150%;
 
 }
 
 p {
     font-family: 'Raleway', sans-serif;
-    font-size: 2vw;
+    font-size: 100%;
     font-weight: normal;
+    margin: 0;
 }
 
 .nav-container
@@ -95,33 +100,34 @@ li:not(:last-child) {
 }
 
 
+
+
 .column 
 {
     display: flex;
-    flex-direction: column;
-    gap: 20px 20px;
-    width: 50%;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
 }
 
 .book-Container
 {
+    flex: 1 1 calc(50% - 20px); /* Automatically adjust width */
+    box-sizing: border-box;
     background-color: #444;
-    height: 420px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    /* height: 100%; */
+    max-height: ;
     padding: 10px;
-    gap: 10px;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
-
+    min-height: 200px;
 }
 
 .book-title {
-    display: flex;
-    justify-content: center;
-
+    height: 20%;
 }
 
 .book-desc {
@@ -129,15 +135,12 @@ li:not(:last-child) {
 }
 
 .book-buy {
-    height: 10%;
+    height: 20%;
 }
 
 .book-image {
-    width: 50%;
-    height: 100%;
     margin: 5px;
     padding: 5px;
-    min-height: 300px;
     background-color: aliceblue;
     flex: 1;
     display: flex;
@@ -148,25 +151,36 @@ li:not(:last-child) {
 }
 
 .book-image img {
+    max-width: 100%;
     height: auto;
-    max-height: 76%;
-    object-fit: contain;
 }
 
 .book-info {
-    width: 50%;
-    height: 100%;
+    flex: 1;
     margin: 5px;
     padding: 5px;
-    min-height: 300px;
     background-color: bisque;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    gap: 20px;
 }
 
 @media screen and (max-width: 1090px) {
+    h {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 100%;
+    
+    }
+    
+    p {
+        font-family: 'Raleway', sans-serif;
+        font-size: 100%;
+        font-weight: normal;
+        margin: 0;
+    }
+
     .content {
         display: flex;
         flex-direction: column;
@@ -206,8 +220,19 @@ li:not(:last-child) {
         display: block;
     }
 
-    .nav-container li
-    {
-        
+    .book-title {
+        height: 10%;
     }
+    
+    .book-desc {
+        height: 80%;
+    }
+    
+    .book-buy {
+        height: 10%;
+    }
+    /* .book-image img {
+        width: 100%;
+        max-height: 400px;
+    } */
 }
