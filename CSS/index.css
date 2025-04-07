@@ -9,6 +9,10 @@ h {
 
 }
 
+#title {
+    font-size: 250%;
+}
+
 p {
     font-family: 'Raleway', sans-serif;
     font-size: 100%;
@@ -47,6 +51,7 @@ p {
     border: 2px solid black;
     transition: 0.3s;
     padding: 0px 10px 0px 10px;
+    border-radius: 10px;
 }
 
 li:not(:last-child) { 
@@ -170,13 +175,16 @@ li:not(:last-child) {
     h {
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
-        font-size: 100%;
-    
+        /* white-space: nowrap;       
+        overflow: hidden;          
+        text-overflow: ellipsis; 
+         */
+        display: block ;
     }
     
     p {
         font-family: 'Raleway', sans-serif;
-        font-size: 100%;
+        font-size: 0.8vh;
         font-weight: normal;
         margin: 0;
     }
@@ -222,10 +230,13 @@ li:not(:last-child) {
 
     .book-title {
         height: 10%;
+        width: 38%;
     }
     
     .book-desc {
+        display: flex;
         height: 80%;
+        align-items: center;
     }
     
     .book-buy {
