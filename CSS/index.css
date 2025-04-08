@@ -180,6 +180,7 @@ li:not(:last-child) {
         text-overflow: ellipsis; 
          */
         display: block ;
+        font-size: 1vh;
     }
     
     p {
@@ -230,7 +231,7 @@ li:not(:last-child) {
 
     .book-title {
         height: 10%;
-        width: 38%;
+        /* width: 38%; */
     }
     
     .book-desc {
