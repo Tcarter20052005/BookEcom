@@ -5,7 +5,7 @@ html {
 h {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 150%;
+    font-size: 1.8vw;
 
 }
 
@@ -15,7 +15,7 @@ h {
 
 p {
     font-family: 'Raleway', sans-serif;
-    font-size: 100%;
+    font-size: 1vw;
     font-weight: normal;
     margin: 0;
 }
@@ -104,7 +104,24 @@ li:not(:last-child) {
     height: 30px;
 }
 
+.buy-button {
+    padding: 0 10px 0 10px;
+    display: inline-block;
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    min-width: 300px;
+    font-size: 1vw;
+}
 
+.buy-button:hover {
+    
+    background-color: #008000;
+    color: white;
+}
 
 
 .column 
@@ -133,14 +150,25 @@ li:not(:last-child) {
 
 .book-title {
     height: 20%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-items: center;
 }
 
 .book-desc {
     height: 60%;
+    margin: 20px 0 0 0;
 }
 
 .book-buy {
+    display: flex;
     height: 20%;
+    margin: 20px 0 20px 0;
+    justify-content: center;
+    align-items: center;
 }
 
 .book-image {
@@ -156,8 +184,9 @@ li:not(:last-child) {
 }
 
 .book-image img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .book-info {
@@ -168,24 +197,19 @@ li:not(:last-child) {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 20px;
 }
 
 @media screen and (max-width: 1090px) {
     h {
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
-        /* white-space: nowrap;       
-        overflow: hidden;          
-        text-overflow: ellipsis; 
-         */
         display: block ;
-        font-size: 1vh;
+        font-size: 2.8vw;
     }
     
     p {
         font-family: 'Raleway', sans-serif;
-        font-size: 0.8vh;
+        font-size: 2.3vw;
         font-weight: normal;
         margin: 0;
     }
@@ -207,6 +231,7 @@ li:not(:last-child) {
 
     .nav-container {
         flex-direction: column;
+        padding: 10px 0px 10px 0px;
     }
     
     .navbar {
@@ -222,7 +247,7 @@ li:not(:last-child) {
     .navbar.active {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 2px;
     }
 
     .hamburger {
@@ -230,21 +255,58 @@ li:not(:last-child) {
     }
 
     .book-title {
-        height: 10%;
-        /* width: 38%; */
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .book-desc {
         display: flex;
         height: 80%;
         align-items: center;
+        margin: 10px 10px 0 10px;
     }
     
     .book-buy {
         height: 10%;
     }
-    /* .book-image img {
+    .book-image img {
         width: 100%;
         max-height: 400px;
-    } */
+        object-fit: contain;
+    }
+    .nav-container li
+    {
+        display: inline-block;
+        background-color: #A9D6E5;
+        text-align: center;
+        border: 2px solid black;
+        transition: 0.3s;
+        padding: 0px 10px 0px 10px;
+        border-radius: 0;
+    }
+    .buy-button {
+        padding: 0 0 0px 0;
+        display: inline-block;
+        background-color: #444;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        min-width: 100px;
+        height: 20px;
+        font-size: 1.8vw;
+    }
+    
+    .buy-button:hover {
+        
+        background-color: #008000;
+        color: white;
+    }
+    
 }
+
+
