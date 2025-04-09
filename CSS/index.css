@@ -6,11 +6,19 @@ h {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 1.8vw;
+}
 
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 4vh;
 }
 
 #title {
-    font-size: 250%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 5pxpx;
 }
 
 p {
@@ -93,15 +101,23 @@ li:not(:last-child) {
 
 .brand {
     display: flex;
+    justify-content: flex-start;
     flex-direction: row;
-    justify-content: center;
     gap: 10px;
     color: white;
+    width: 100%;
+    align-items: center;
+    position: relative;
 }
 
 #logo img {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: auto;
+}
+
+#logo {
+    text-align: center;
+    padding: 0 20px 0 20px;
 }
 
 .buy-button {
@@ -115,12 +131,14 @@ li:not(:last-child) {
     transition: background-color 0.3s;
     min-width: 300px;
     font-size: 1vw;
+    transition: 0.3s;
 }
 
 .buy-button:hover {
     
     background-color: #008000;
     color: white;
+    transform: scale(1.2);
 }
 
 
@@ -134,7 +152,7 @@ li:not(:last-child) {
 
 .book-Container
 {
-    flex: 1 1 calc(50% - 20px); /* Automatically adjust width */
+    flex: 1 1 calc(50% - 20px); 
     box-sizing: border-box;
     background-color: #444;
     display: flex;
@@ -149,7 +167,6 @@ li:not(:last-child) {
 }
 
 .book-title {
-    height: 20%;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -200,6 +217,7 @@ li:not(:last-child) {
 }
 
 @media screen and (max-width: 1090px) {
+
     h {
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
@@ -286,6 +304,7 @@ li:not(:last-child) {
         transition: 0.3s;
         padding: 0px 10px 0px 10px;
         border-radius: 0;
+        width: 100%;
     }
     .buy-button {
         padding: 0 0 0px 0;
@@ -297,7 +316,7 @@ li:not(:last-child) {
         font-weight: bold;
         transition: background-color 0.3s;
         min-width: 100px;
-        height: 20px;
+        height: min-content;
         font-size: 1.8vw;
     }
     
