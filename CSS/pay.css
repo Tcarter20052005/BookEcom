@@ -12,15 +12,70 @@ html, body {
 
 .form_container {
     min-width: 600px;
-    min-height: 500px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
+    border: 1px black solid;
+    padding: 20px;
+}
+
+.half {
+    gap: 20px;
 }
 
 #pay-form {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
     height: 100%;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.center {
+    justify-content: center;
+}
+
+.label {
+    width: 200px;
+}
+
+#cardNum {
+    width: 100%;
+}
+
+.inputContain {
+    width: 100%;
+    
+}
+
+@media screen and (max-width: 1090px) {
+    .form_container {
+        min-width: auto;
+    }
+    
+    .form-holder {
+        margin: 10px 0 0 0;
+    }
+
+    .label {
+        min-width: min-content;
+        width: 30vw;
+        font-size: 4vw;
+    }
+
+    .buy-button {
+        min-width: 200px;
+        font-size: 4vw;
+    }
+
+    .form_container {
+        width: 100%;
+        margin: 10px;
+    }
 }

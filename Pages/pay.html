@@ -26,25 +26,35 @@
             </div>
 
             <div class="form-row">
-                <label for="cardNum">Card Number: </label>
+                <div>
+                    <p class="label">Card Number: </p>
+                </div>
+
+                <div class="inputContain">
                 <input id="cardNum" name="cardNum" type="text" placeholder="Card Number" maxlength="16" size="16" required>
+                </div>
             </div>
             
             <div class="form-row half">
                 <div>
-                    <label>Expiry Date:</label>
+                    <p class="label">Expiry Date:</p>
+                </div>
+
+                <div class="inputContain">
                     <select name="expmon" id="expmon" required></select>
                 </div>
                 
 
-                <div>
+                <div class="inputContain">
                     <select name="expyear" id="expyear" required></select>
                 </div>
                 
             </div>
 
             <div class="form-row">
-                <label for="seCode">CCV: </label>
+                <div>
+                    <p class="label">CCV:</p>
+                </div>
                 <input id="seCode" name="seCode" placeholder="CCV" size="4" maxlength="4" minlength="3">
             </div>
 
