@@ -1,0 +1,44 @@
+<div class="form-holder">
+    <div class="form_container">
+    <form id="pay-form" action="">
+
+
+        <div class="group" style="display: none;">
+            <p id="error-text"></p>
+        </div>
+
+        <div class="form-row">
+        <div class="group">
+            <label for="cardNum">Card Number: </label>
+            <input id="cardNum" name="cardNum" type="text" placeholder="Card Number" maxlength="16" size="16" required>
+        </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="group-1">
+                <label for="expmon">Expiry Month:</label>
+                <select name="expmon" id="expmon" required></select>
+            </div>
+            
+
+            <div class="group-2">
+                <label for="expyear">Expiry Year:</label>
+                <select name="expyear" id="expyear" required></select>
+            </div>
+            
+        </div>
+
+        <div class="group-3">
+            <label for="seCode">CCV: </label>
+            <input id="seCode" name="seCode" placeholder="CCV" size="4" maxlength="4" minlength="3">
+        </div>
+
+        <div class="group-4">
+            <input class="buy-button" type="submit" value="Pay Now">
+        </div>
+
+        
+
+    </form>
+    </div>
+    </div>
