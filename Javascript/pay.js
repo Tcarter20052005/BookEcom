@@ -1,9 +1,16 @@
 // Populate Expiry Month
 const expMonth = document.getElementById("expmon");
-for (let i = 1; i <=12; i++) {
+for (let i = 0; i <=12; i++) {
     let option = document.createElement("option");
-    option.value = i;
-    option.textContent = i.toString().padStart(2, "0");
+    
+    if (i == 0) {
+        option.value = 0;
+        option.textContent = "Month";
+    } else {
+        option.value = i;
+        option.textContent = i.toString().padStart(2, "0");
+    }
+    
     expMonth.appendChild(option);
 }
 
@@ -11,10 +18,17 @@ for (let i = 1; i <=12; i++) {
 // Populate Expiry Year
 const yearSelect = document.getElementById("expyear");
 const currentYear = new Date().getFullYear();
-for (let i = 0; i < 10; i++) {
+for (let i = -1; i < 10; i++) {
     let option = document.createElement("option");
-    option.value = currentYear + i;
-    option.textContent = currentYear + i;
+    
+    if (i == -1) {
+        option.value = 0;
+        option.textContent = "Year";
+    } else {
+        option.value = currentYear + i;
+        option.textContent = currentYear + i;
+    }
+    
     yearSelect.appendChild(option);
 }
 
@@ -94,13 +108,10 @@ document.getElementById("pay-form"). addEventListener("submit", async function(e
             }
             alert(resp.message);
         })
-        .then ((cardNum) => {
-            const last_4 = cardNum % 10000;
-            localStorage.setItem("lastFour", last_4);
-         })
 
-
-        alert("ok");
+        const last_4 = cardNum.slice(-4);
+        localStorage.setItem("lastFour", last_4);
+        window.location.href = "../Pages/success.html";
     }
     catch(error) {
         ErrorTXT(true, error.message);

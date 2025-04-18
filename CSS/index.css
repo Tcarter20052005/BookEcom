@@ -112,7 +112,7 @@ li:not(:last-child) {
 }
 
 #logo img {
-    width: 80px;
+    width: 5vw;
     height: auto;
 }
 
@@ -334,6 +334,11 @@ li:not(:last-child) {
     #logo {
         text-align: center;
         padding: 0px 0px 0 10px;
+    }
+
+    #logo img {
+        width: 7vw;
+        height: auto;
     }
 }
 

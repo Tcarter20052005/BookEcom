@@ -9,6 +9,9 @@ html, body {
     height: min-content;
     margin: 30px;
 }
+.banner {
+    width: 25vw;
+}
 
 .form_container {
     min-width: 600px;
@@ -17,10 +20,10 @@ html, body {
     flex-direction: column;
     border: 1px black solid;
     padding: 20px;
+    background-color: bisque;
 }
 
 .half {
-    gap: 20px;
 }
 
 #pay-form {
@@ -43,6 +46,8 @@ html, body {
 
 .label {
     width: 200px;
+    font-size: 2vh;
+    font-weight: bold;
 }
 
 #cardNum {
@@ -66,16 +71,24 @@ html, body {
     .label {
         min-width: min-content;
         width: 30vw;
-        font-size: 4vw;
+        font-size: 2vh;
     }
 
     .buy-button {
         min-width: 200px;
-        font-size: 4vw;
+        font-size: 2vh;
     }
 
     .form_container {
-        width: 100%;
-        margin: 10px;
+        width: ;
+        margin: 10px 0 10px 0;
+    }
+
+    .banner {
+        width: 50vw;
+    }
+
+    .form-holder {
+        margin: 0px;
     }
 }
