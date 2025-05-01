@@ -111,7 +111,7 @@ document.getElementById("pay-form"). addEventListener("submit", async function(e
 
         const last_4 = cardNum.slice(-4);
         localStorage.setItem("lastFour", last_4);
-        window.location.href = "../Pages/success.html";
+        window.location.href = "success.html";
     }
     catch(error) {
         ErrorTXT(true, error.message);
