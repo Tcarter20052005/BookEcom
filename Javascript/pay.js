@@ -1,37 +1,3 @@
-// // Populate Expiry Month
-// const expMonth = document.getElementById("expmon");
-// for (let i = 0; i <=12; i++) {
-//     let option = document.createElement("option");
-    
-//     if (i == 0) {
-//         option.value = 0;
-//         option.textContent = "Month";
-//     } else {
-//         option.value = i;
-//         option.textContent = i.toString().padStart(2, "0");
-//     }
-    
-//     expMonth.appendChild(option);
-// }
-
-
-// // Populate Expiry Year
-// const yearSelect = document.getElementById("expyear");
-// const currentYear = new Date().getFullYear();
-// for (let i = -1; i < 10; i++) {
-//     let option = document.createElement("option");
-    
-//     if (i == -1) {
-//         option.value = 0;
-//         option.textContent = "Year";
-//     } else {
-//         option.value = currentYear + i;
-//         option.textContent = currentYear + i;
-//     }
-    
-//     yearSelect.appendChild(option);
-// }
-
 // Toggle Error Text
 function ErrorTXT(show, message = "") {
     const errortxt = document.getElementById("error-text")
