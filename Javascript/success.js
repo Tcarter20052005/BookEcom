@@ -6,3 +6,7 @@ window.onload = () =>{
 
     document.getElementById("successTXT").textContent = "Your Credit Card Number Ends In " + lastFour.toString();
 }
+
+document.getElementById("buy-button"). addEventListener("click", async function(event) {
+    localStorage.removeItem("lastFour");
+});

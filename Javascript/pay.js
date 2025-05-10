@@ -1,36 +1,36 @@
-// Populate Expiry Month
-const expMonth = document.getElementById("expmon");
-for (let i = 0; i <=12; i++) {
-    let option = document.createElement("option");
+// // Populate Expiry Month
+// const expMonth = document.getElementById("expmon");
+// for (let i = 0; i <=12; i++) {
+//     let option = document.createElement("option");
     
-    if (i == 0) {
-        option.value = 0;
-        option.textContent = "Month";
-    } else {
-        option.value = i;
-        option.textContent = i.toString().padStart(2, "0");
-    }
+//     if (i == 0) {
+//         option.value = 0;
+//         option.textContent = "Month";
+//     } else {
+//         option.value = i;
+//         option.textContent = i.toString().padStart(2, "0");
+//     }
     
-    expMonth.appendChild(option);
-}
+//     expMonth.appendChild(option);
+// }
 
 
-// Populate Expiry Year
-const yearSelect = document.getElementById("expyear");
-const currentYear = new Date().getFullYear();
-for (let i = -1; i < 10; i++) {
-    let option = document.createElement("option");
+// // Populate Expiry Year
+// const yearSelect = document.getElementById("expyear");
+// const currentYear = new Date().getFullYear();
+// for (let i = -1; i < 10; i++) {
+//     let option = document.createElement("option");
     
-    if (i == -1) {
-        option.value = 0;
-        option.textContent = "Year";
-    } else {
-        option.value = currentYear + i;
-        option.textContent = currentYear + i;
-    }
+//     if (i == -1) {
+//         option.value = 0;
+//         option.textContent = "Year";
+//     } else {
+//         option.value = currentYear + i;
+//         option.textContent = currentYear + i;
+//     }
     
-    yearSelect.appendChild(option);
-}
+//     yearSelect.appendChild(option);
+// }
 
 // Toggle Error Text
 function ErrorTXT(show, message = "") {
@@ -67,6 +67,7 @@ document.getElementById("pay-form"). addEventListener("submit", async function(e
         // Form Validation - Step 2 -- Card Expiry Check
         const checkYear = new Date().getFullYear();
         const checkMonth = new Date().getMonth()+1;
+        const currentYear = new Date().getFullYear();
 
         if (checkYear > expYear) {
             throw new Error("Card is Expired or Incorrect")
